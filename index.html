@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-work - 让多个 AI 助手一起帮你把工作变简单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #007AFF;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #007AFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0051D5;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #007AFF;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Core Features */
+        .core-features {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .core-feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .core-feature-item {
+            padding: 25px;
+            border-left: 4px solid #007AFF;
+            background: #f8f9fa;
+        }
+
+        .core-feature-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .core-feature-item p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .screenshot-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Target Audience */
+        .audience {
+            padding: 80px 0;
+        }
+
+        .audience-list {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .audience-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007AFF;
+        }
+
+        .audience-item p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        footer p {
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .feature-grid,
+            .core-feature-list,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Co-work</div>
+            <p class="tagline">让多个 AI 助手一起帮你把工作变简单</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>专为职场人士设计的 macOS AI 办公应用</h1>
+            <p>在一个界面中自由选择不同智能体，分别完成写作、总结、分析、润色等常见办公任务，就像随身带着一组懂业务的聊天助手。</p>
+            <a href="#features" class="cta-button">了解更多</a>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="core-features" id="features">
+        <div class="container">
+            <h2 class="section-title">核心特性：多智能体，一站式办公</h2>
+            <div class="core-feature-list">
+                <div class="core-feature-item">
+                    <h4>✍️ 写作助手</h4>
+                    <p>帮你写邮件、汇报材料、方案文案、宣传内容等</p>
+                </div>
+                <div class="core-feature-item">
+                    <h4>📝 总结助手</h4>
+                    <p>快速整理会议纪要、聊天记录、长文档要点</p>
+                </div>
+                <div class="core-feature-item">
+                    <h4>🔍 分析助手</h4>
+                    <p>协助梳理需求、分析问题、输出结构化结论</p>
+                </div>
+                <div class="core-feature-item">
+                    <h4>💡 头脑风暴助手</h4>
+                    <p>提供创意点子、标题备选、活动方案草稿</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #666; font-size: 16px;">
+                你只需要根据场景选择对应的智能体，就能更快得到合适的回复。
+            </p>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <div class="container">
+            <h2 class="section-title">应用截图</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-item">
+                    <img src="pic/547ae341e8e1fb9d51ef81709cba8f46.png" alt="Co-work 应用截图 1">
+                </div>
+                <div class="screenshot-item">
+                    <img src="pic/d9a1a15a90621ceb2e112cea4a2ddd52.png" alt="Co-work 应用截图 2">
+                </div>
+                <div class="screenshot-item">
+                    <img src="pic/eca8818c59b476c6c484a529fc21de09.png" alt="Co-work 应用截图 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Detail -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🖥️ macOS 原生体验</h3>
+                    <p>专为 Mac 打造，支持常见快捷操作。窗口布局简洁，适合边工作边对话。复制粘贴文稿、需求说明即可开始聊天。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 隐私优先，无需登录</h3>
+                    <p>使用 Co-work 不需要注册账号或登录。聊天记录仅保存在本机，方便你随时回顾与管理。不依赖第三方账号授权，减少隐私风险。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💼 面向真实办公场景优化</h3>
+                    <p>适合产品、运营、市场、职能岗位等日常文档工作。帮你生成日报周报、项目汇报、复盘文档、活动方案。可以根据你的提示，调整为正式、公文、轻松等不同语气。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="audience">
+        <div class="container">
+            <h2 class="section-title">适合这些人使用</h2>
+            <div class="audience-list">
+                <div class="audience-item">
+                    <p>📧 需要频繁写邮件、写汇报、写文案的职场人士</p>
+                </div>
+                <div class="audience-item">
+                    <p>📋 希望快速整理会议记录、聊天记录、长文档要点的团队成员</p>
+                </div>
+                <div class="audience-item">
+                    <p>📊 需要经常输出方案、规划、复盘的产品/运营/市场从业者</p>
+                </div>
+                <div class="audience-item">
+                    <p>✨ 想要一个轻量、干净、专注办公的 Mac 上 AI 助手用户</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Co-work. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
